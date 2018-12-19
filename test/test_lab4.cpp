@@ -5,7 +5,7 @@
 
 
 
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 
 TEST(task1, sort_lines)
 {
