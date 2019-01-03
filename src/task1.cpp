@@ -27,8 +27,6 @@ int compare(const void *a, const void *b)
 
 void lineSort(char *str[], int size)
 {
-
-	//char *sort[S];
 	qsort(str, size, sizeof(char**), compare);
 }
 

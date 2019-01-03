@@ -5,8 +5,6 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "task1.h"
 
 #define ROWS 25 // maximum number of rows
