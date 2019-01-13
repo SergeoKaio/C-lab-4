@@ -8,3 +8,5 @@ void printLinesToFile(const char *str[], int size, FILE *fp)
 	while (i < size)
 		fputs(str[i], fp), i++;
 }
+
+
