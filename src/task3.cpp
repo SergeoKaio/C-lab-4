@@ -6,7 +6,7 @@ int isPalindrome(char * str)
 	char *begin;
 	char *end;
 	begin = &str[0];
-	end = &str[n - 1];
+	end = &str[n];
 	for (int i = 0; i < n / 2; i++)
 		if (*begin != *end)
 			return 0;
