@@ -3,31 +3,10 @@
 
 int main()
 {
-	char *in;
+	char in[100];
 	char out[100];
-	char str[1000],word[100];
-	int i,j;
-	fgets(str, 256, stdin);
-	i = 0;
-	j = 0;
-	while (str[i]!='\n')
-	{
-		while (str[i] == ' ')
-		{
-			printf(" ");
-			i++;
-			continue;
-		}
-		while (str[i] != ' '&&str[i] != '\n')
-		{
-			word[j] = str[i];
-			i++;
-			j++;
-		}
-		word[j] = '\0';
-		in = &word[0];
-		j = 0;
-		printf("%s", reverseWords(in, out));
-	}
+	fgets(in, 256, stdin);
+	reverseWords(in, out);
+	printf("%s", out);
 	return 0;
 }
