@@ -12,7 +12,7 @@ int main(void)
 	FILE *fp;
 	fp = fopen("111.txt", "r+");
 	if (fp == NULL)
-		puts("file not found");
+		puts("not found");
 	
 	while (fgets(food[i], 256, fp) != NULL)
 		str[i] = food[i], ++i;
