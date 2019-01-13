@@ -5,9 +5,9 @@ char * reverseWords(char * in, char *out)
 	char *words[100];
 	int i = 0;
 	int j = 0;
-	while (*in!= '\n')
+	while (*in!= '\0')
 	{
-		if (*in == ' '||*in=='\0')
+		if (*in == ' ')
 		{
 			*in++;
 			continue;
@@ -15,18 +15,19 @@ char * reverseWords(char * in, char *out)
 		
 		j = 0;
 		words[i] = in;
-		while (*in != ' '&&*in!='\n')
+		while (*in != ' '&&*in!='\0'&&*in!='\n')
 		{
 			*in++;
 			j++;
 		
 		}
-		if (*in == '\n')
+		if (*in == '\0'||*in=='\n')
 		{
 			words[i][j] = '\0';
 			break;
 		}
 		words[i][j] = '\0';
+		*in++;
 		i++;
 		
 	}
