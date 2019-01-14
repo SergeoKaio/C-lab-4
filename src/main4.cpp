@@ -35,7 +35,8 @@ int main()
 				//printf("%s", text[count]);
 				pstr[count] = text[count++];
 			}
-			if (feof(fpR)) break;
+			if (feof(fpR)) 
+				break;
 		}
 
 	fclose(fpR);
