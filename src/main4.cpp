@@ -20,16 +20,29 @@ int main()
 		puts("I can't open task4R.txt!");
 		return 1;
 	}
+	//else
+	//	puts("Block -Open file to READ- done!");
+
 
 	char text[ROWS][CHAR_IN_LINE] = { 0 };
 	char *pstr[ROWS] = { NULL };
 	int count = 0;
-	
+	//puts("!");
 
-	while ((count < ROWS) && (*fgets(text[count], CHAR_IN_LINE, fpR) != '\n'))
-		pstr[count] = text[count++];
+		while ((count < ROWS) && (*fgets(text[count], CHAR_IN_LINE, fpR) != '\n'))
+		{
+			{
+				//printf("%s", text[count]);
+				pstr[count] = text[count++];
+			}
+			if (feof(fpR)) break;
+		}
 
 	fclose(fpR);
+
+
+	//puts("---");
+
 
 	FILE *fpW = fopen("task4W.txt", "w");
 	if (fpR == NULL)
@@ -37,6 +50,8 @@ int main()
 		puts("I can't open task4W.txt!");
 		return 1;
 	}
+	//else
+	//	puts("Block -Open file to WRITE- done!");
 
 
 	lineSort(pstr, count);
