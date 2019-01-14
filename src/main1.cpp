@@ -18,9 +18,16 @@ int main()
 		{
 			break;
 		}
+		if (arr[i][strlen(arr[i]) - 1] == '\n')//deleting \n in the end of the string
+			arr[i][strlen(arr[i]) - 1] = '\0';
+		
 		str[i] = &arr[i][0];
 	}
+
+
 	lineSort(str, i);
+
+
 	printLines(str, i);
 
 	return 0;
