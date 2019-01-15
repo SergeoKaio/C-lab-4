@@ -29,14 +29,13 @@ int main()
 	int count = 0;
 	//puts("!");
 
-		while ((count < ROWS) && (*fgets(text[count], CHAR_IN_LINE, fpR) != '\n'))
+		while ((count < ROWS) && (fgets(text[count], CHAR_IN_LINE, fpR) != NULL))
 		{
+			char c;
 			{
 				//printf("%s", text[count]);
 				pstr[count] = text[count++];
 			}
-			if (feof(fpR)) 
-				break;
 		}
 
 	fclose(fpR);
