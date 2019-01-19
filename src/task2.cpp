@@ -44,4 +44,6 @@ char * reverseWords(char * in, char *out)
 		out[k] = ' ';
 		k++;
 	}
+	if (out[strlen(out) - 1] == ' ')
+		out[strlen(out) - 1] = '\0';
 }

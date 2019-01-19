@@ -4,16 +4,17 @@
 int isPalindrome(char * str)
 {
 	char * start = str;
-	int length = strlen(str);
-	char * end = (str + strlen(str) - 2);
+	if (str[strlen(str) - 1] == '\n')//избавляемся  \n чтоб не путаться
+		str[strlen(str) - 1] = '\0';
+	char * end = (str + strlen(str) - 1);
 	int result = 1;
 	for (; start < end; start++, end--)
 	{
 		if (*start != *end)
 		{
-			result = 0;
-			break;
+			return 0;
+			//break;
 		}			
 	}
-	return result;
+	return 1;
 }
