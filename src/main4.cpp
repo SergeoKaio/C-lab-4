@@ -9,7 +9,7 @@ int main()
 {
 	char arr[SIZE1][SIZE1] = { 0 };
 	char *str[SIZE1];
-	FILE *fp;
+	FILE *fp = NULL;
 	fp = fopen("text4.txt", "r+");
 	if (fp == 0)//cheking of the file
 	{
