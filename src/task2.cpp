@@ -38,12 +38,11 @@ char * reverseWords(char * in, char *out)
 			else
 			{
 				out[k] = pointers[i][j];
-				
 				k++;
 			}
 		out[k] = ' ';
 		k++;
 	}
-	if (out[strlen(out) - 1] == ' ')
-		out[strlen(out) - 1] = '\0';
+	
+	out[strlen(in)] = '\0';
 }
