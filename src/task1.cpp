@@ -9,7 +9,7 @@ void lineSort(char *str[], int size)
 	for(i = 0; i < size - 1; i++)
 		for (j = i + 1; j < size; j++)
 		{
-			if (strlen(str[i]) < strlen(str[j]))
+			if (strlen(str[i]) > strlen(str[j]))
 			{
 				arr = str[i];
 				str[i] = str[j];
