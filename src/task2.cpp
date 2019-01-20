@@ -24,7 +24,7 @@ char *reverseWords(char *in, char *out)
 	}
 	for (i = count - 1; i >= 0; i--)
 	{
-		while(*ptr[i]!=' ' && *ptr[i])
+		while(*ptr[i]!=' ' && *ptr[i]!='\0')
 			out[j++] = *ptr[i]++;
 		out[j++] = ' ';
 	}
