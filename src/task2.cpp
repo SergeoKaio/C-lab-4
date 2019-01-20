@@ -28,6 +28,6 @@ char *reverseWords(char *in, char *out)
 			out[j++] = *ptr[i]++;
 		out[j++] = ' ';
 	}
-	out[j++]='\0';
+	out[j]='\0';
 	return out;
 }
