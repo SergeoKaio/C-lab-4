@@ -11,9 +11,9 @@ char * reverseWords(char * in, char *out)
     char *index[M];
     int i = 0;
     index[i] = strtok(in, " ");        //с помощью strtok определяем в строке (к-я лежит в массиве in) лексемы(слова), маркер лексемы пробел
-    while(index[i] != 0)                //пока есть лексемы
+    while(index[i] != NULL)                //пока есть лексемы
     {
-        index[++i] = strtok(0, " ");
+        index[++i] = strtok(NULL, " ");
     }
     while(i > 0)
     {
