@@ -10,7 +10,6 @@ int main()
     printf("Enter a string: \n" );
     fgets(in, N, stdin);
     reverseWords(in, out);
-    printf("\n");
     return 0;
 }
 
