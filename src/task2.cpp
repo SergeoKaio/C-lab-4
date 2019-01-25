@@ -26,11 +26,10 @@ char * reverseWords(char * in, char *out)
 			
 			if (*(*(word + q) + t) != ' ' && *(*(word + q) + t) != '\0')
 				out[j] = *(*(word + q) + t);
-			
 		}
 		out[j] = ' ';
 		j++;
 	}
-	out[j] = '\0';
+	out[j-1] = '\0';
 	return out;
 }
