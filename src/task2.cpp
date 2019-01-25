@@ -46,7 +46,7 @@ char * reverseWords(char * in, char *out)
 		i++;
 		j--;
 	}
-	out[i] = '\0';
+	out[i-1] = '\0';
 
 	return out;
 
