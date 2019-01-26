@@ -9,8 +9,9 @@ char * reverseWords(char * in, char *out)
 {
 	char  *pointers[SIZE] = { 0 };
 	int j = 0;
-	int word=outWord ;
 	int i = 0;
+	int word = outWord;
+
 	while (i < strlen(in))
 	{
 		if (in[i] != ' ' && word ==outWord)
@@ -20,7 +21,7 @@ char * reverseWords(char * in, char *out)
 			j++;
 			word = inWord;
 		}
-		else if (in[i] = ' ' && word==inWord)
+		else if (in[i] == ' ' && word==inWord)
 		{
 			word = outWord;
 			i++;
@@ -32,7 +33,7 @@ char * reverseWords(char * in, char *out)
 	j--;
 	while (j >= 0)
 	{
-		while (*pointers[j]&& *pointers[j] != ' ')
+		while (*pointers[j] && *pointers[j]!= ' ')
 		{
 			out[i] = *pointers[j];
 			i++;
