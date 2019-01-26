@@ -1,4 +1,7 @@
+#include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <string>
 #include "task1.h"
 #include "task4.h"
 
@@ -7,17 +10,18 @@
 int main()
 {
 	char *str[N];
-	char *p[N];
-	int size = 0;
+	char p[N][M];
+	int i = 0;
 	FILE *fp;
-	while (size < N && *fgets(str[size], M, stdin) != '\n')
+	while ((*fgets(p[i], M, stdin)) != '\n')
 	{
-		p[size] = str[size];
-		size++;
+		p[i][strlen(p[i]) - 1] = '\0';
+		str[i] = p[i];
+		i++;
 	}
 	fopen("C:\\1.txt", "w");
-	lineSort(str, size);
-	printLinesToFile(str, size, fp);
+	lineSort(str, i);
+	printLinesToFile(str, i, fp);
 
 	return 0;
 }
