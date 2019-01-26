@@ -13,7 +13,7 @@ int main()
 	char p[N][M];
 	int i = 0;
 	FILE *fp;
-	while ((*fgets(p[i], M, stdin)) != '\n')
+	while (*fgets(p[i], M, stdin) != '\n')
 	{
 		p[i][strlen(p[i]) - 1] = '\0';
 		str[i] = p[i];
