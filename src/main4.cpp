@@ -1,27 +1,39 @@
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
-#include <string>
-#include "task1.h"
+#include <string.h>
+#include <time.h>
+#include <stdlib.h>
 #include "task4.h"
-
 #define N 256
 #define M 256
 int main()
 {
-	char *str[N];
-	char p[N][M];
-	int i = 0;
-	FILE *fp;
-	while (*fgets(p[i], M, stdin) != '\n')
-	{
-		p[i][strlen(p[i]) - 1] = '\0';
-		str[i] = p[i];
-		i++;
-	}
-	fopen("C:\\1.txt", "w");
-	lineSort(str, i);
-	printLinesToFile(str, i, fp);
+	char str[N][M] = { 0 };
+	char *g[N] = { 0 };
+	int count = 0;
 
+	FILE *fp;
+	fp = fopen("1.txt", "r");
+	if (fp == NULL)
+	{
+		puts("Fail ne nayden");
+		return 1;
+	}
+
+	while (count < 256 && fgets(str[count], 256, fp) != NULL)
+	{
+		g[count] = str[count];
+		count++;
+	}
+	fclose(fp);
+	lineSort(g, count);
+	fp = fopen("2.txt", "w");
+	if (fp == NULL)
+	{
+		puts("Fail ne nayden");
+		return 1;
+	}
+    printLinesToFile((const char**)g, count, fp);
+	fclose(fp);
+	puts("Vse ok");
 	return 0;
 }
