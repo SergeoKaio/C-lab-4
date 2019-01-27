@@ -8,6 +8,8 @@ int main()
 	char str[N] = { 0 };
 	printf("Enter a string:\n");
 	fgets(str, N, stdin);
+	if (str[strlen(str) - 1] == '\n')
+		str[strlen(str) - 1] = '\0';
 	if (isPalindrome(str) == 0)
 		printf("String is Palindrome\n");
 	else

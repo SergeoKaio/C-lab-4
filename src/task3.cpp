@@ -2,18 +2,21 @@
 
 int isPalindrome(char * str)
 {
-	int a;
-	char *arr = str;
-	char *len = &str[strlen(str) - 2];
-	while (arr<len)
+	int flag;
+	char *a = str;
+	char *b = &str[strlen(str) - 1];
+	while (a<b)
 	{
-		if (*arr == *len)
+		if (*a == *b)
 		{
-			arr++, len--;
-			a = 0;
+			a++, b--;
+			flag = 0;
 		}
-			else
-				a = 1;
+		else
+		{
+			flag = 1;
+			break;
 		}
-	return a;
+		}
+	return flag;
 }
