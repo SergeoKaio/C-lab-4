@@ -9,7 +9,7 @@ int isPalindrome(char * str)
 	{
 		if (*a == *b)
 		{
-			a++, b--;
+			*a++, *b--;
 			flag = 0;
 		}
 		else
