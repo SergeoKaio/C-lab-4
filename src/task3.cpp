@@ -2,7 +2,7 @@
 
 int isPalindrome(char * str)
 {
-	int flag;
+	int flag=1;
 	char *a = str;
 	char *b = &str[strlen(str) - 1];
 	while (a<b)
@@ -10,11 +10,10 @@ int isPalindrome(char * str)
 		if (*a == *b)
 		{
 			*a++, *b--;
-			flag = 0;
 		}
 		else
 		{
-			flag = 1;
+			flag = 0;
 			break;
 		}
 		}

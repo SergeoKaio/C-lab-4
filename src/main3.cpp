@@ -10,7 +10,7 @@ int main()
 	fgets(str, N, stdin);
 	if (str[strlen(str) - 1] == '\n')
 		str[strlen(str) - 1] = '\0';
-	if (isPalindrome(str) == 0)
+	if (isPalindrome(str) == 1)
 		printf("String is Palindrome\n");
 	else
 		printf("String is not Palindrome\n");
