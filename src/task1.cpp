@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
+#include<cstring>
 
 int compar(const void* p1, const void* p2)
 {

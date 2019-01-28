@@ -1,4 +1,4 @@
-#include < string.h >
+#include <cstring>
 int isPalindrome(char * str)
 {
 	

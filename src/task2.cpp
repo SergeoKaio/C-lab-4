@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include <cstring>
 #include <stdlib.h>
 
 char  buf[100][100];
