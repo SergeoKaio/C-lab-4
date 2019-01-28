@@ -33,6 +33,6 @@ char * reverseWords(char * in, char *out)
 		out[r++] = ' ';
 		j--;
 	}
-	out[r++] = '\0';
+	out[r] = '\0';
 	return 0;
 }
