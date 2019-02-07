@@ -2,7 +2,9 @@
 
 int isPalindrome(char * str)
 {
-	int start = 0, end = strlen(str) - 2;
+	int start = 0, end = strlen(str) - 1;
+	while(str[end]=='\n')
+		end--;
 	while (start <= end)
 	{
 		if (str[start] == str[end])

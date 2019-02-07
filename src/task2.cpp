@@ -1,16 +1,6 @@
 #include <string.h>
 char * reverseWords(char * in, char *out)
 {
-	//int start = 0, end = strlen(in)-2;
-	//while (end>=0)
-	//{
-	//	out[start] = in[end];
-	//	start++;
-	//	end--;
-	//}
-	////out[start] = in[end];
-	////start++;
-	//out[start]='\0';
 	int i = strlen(in) - 2, j = 0, k = 0;
 	while (i >= 0)
 	{
@@ -32,6 +22,6 @@ char * reverseWords(char * in, char *out)
 		}
 		i--;
 	}
-	out[k] = '\0';
+	out[k-1] = '\0';
 	return out;
 }
