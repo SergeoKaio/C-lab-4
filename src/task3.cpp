@@ -12,7 +12,7 @@ int isPalindrome(char * str)
 			start++;
 			end--;
 		}
-		else return 1;
+		else return 0;
 	}
-	return 0;
+	return 1;
 }
