@@ -9,7 +9,7 @@ char * reverseWords(char *in, char *out){
     int count = 0; // счетчик слов
     int inWord = 0; // флаг: 1 - в слове, 0 - не в слове;
     int i = 0; // для массива in
-    int m = 0; // для массива  щге
+    int m = 0; // для массива out
     while (in[i] != '\0'){
         if (inWord == 0 && in[i] != ' '){
             inWord = 1;
@@ -35,7 +35,7 @@ char * reverseWords(char *in, char *out){
         count--;
     }
     
-    out[strlen(out)-1] = '\0';
+    out[strlen(in)] = '\0';
     
     return out;
 }
