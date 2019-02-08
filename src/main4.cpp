@@ -27,40 +27,30 @@
 #define wordCOUNT 30 // максимальное количесво слов допустимое для нашего двумерного массива
 
 int main(){
-    char str [wordCOUNT][wordSIZE] = { NULL }; // двумерный массив, заполнямый пользователем
+    char str [wordCOUNT][wordSIZE] = { 0 }; // двумерный массив, заполнямый пользователем
     char *p_str [wordCOUNT] = { NULL }; // массив указателей на строки первого массива
     int count = 0; // счетчик введенных пользователем слов
     
-    FILE * fpRead;
-    fpRead = fopen("input.txt", "r"); // читаем файл text.txt
+    FILE * fp = NULL;
+    fp = fopen("text4.txt", "r+"); // читаем файл text.txt
     
-    if(fpRead == NULL){
+    if(fp == NULL){
         printf("Error! Your file can't be opened!");
         return 1;
     }
 
     
     // цикл заполняет массив указателей копируя значения введенные пользователем и сохраненные в массиве str.
-    while((count < wordCOUNT) && (fgets(str[count], wordSIZE, fpRead) != NULL) ){
+    while((count < wordCOUNT) && (fgets(str[count], wordSIZE, fp) != NULL) ){
         p_str[count] = str[count];
         count++;
     }
     
-    fclose(fpRead);
-    
     lineSort(p_str, count);
     
-    FILE * fpWrite;
-    fpWrite = fopen("output.txt", "w");
+    printLinesToFile((const char**) p_str, count, fp);
     
-    if(fpWrite == NULL){
-        printf("Error! Your file can't be opened!");
-        return 1;
-    }
-    
-    printLinesToFile((const char**) p_str, count, fpWrite);
-    
-    fclose(fpWrite);
+    fclose(fp);
     
     return 0;
 }
