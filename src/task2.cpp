@@ -43,10 +43,12 @@ char * reverseWords(char * in, char *out)
 			count2++;
 			j++;
 		}
+		if(i>0)
 		*(out + count2) = ' ';
 		count2++;
 	}
 	//*(out + count2-1) = '\n';
-	*(out + count2 ) = '\0';
+	
+	*(out + count2-1 ) = '\0';
 	return out;
 }
