@@ -11,6 +11,8 @@ int main()
 	char buf[N][M];
 	char *str[N];
 	int count = 0;
+
+#include <stdio.h>
 	
 	FILE *fp;
 	fp = fopen("text.txt", "r");
@@ -28,6 +30,9 @@ int main()
 
 	lineSort(str, count);
 	fclose(fp);
+
+#include <stdio.h>
+
 	fp = fopen("2.txt", "w+");
 	printLinesToFile((const char**)str, count, fp);
 	fclose(fp);
