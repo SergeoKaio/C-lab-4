@@ -1,21 +1,24 @@
-#include <string.h>
+#include<string.h>
 
-int isPalindrome(char *str)
+int isPalindrome(char * str)
 {
-	int len = 0, i, j, count = 0;
-	char *tstart, *tfinish;
-
-	len = strlen(str);
-	tstart = str;
-	tfinish = &str[len - 1];
-
-	for (i = 0, j = 0; i < len; i++, j++)
+	char *p1, *p2;
+	p1 = str;
+	p2 = str + strlen(str) - 1;
+	while (p1 < p2)
 	{
-		if (*(tstart + i) == *(tfinish - j))
-			count++;
+		if (*p1 == ' ')
+		{
+			p1++; continue;
+		}
+		if (*p2 == ' ')
+		{
+			p2--;
+			continue;
+		}
+		if (*p1 != *p2)
+			return 0;
+		p1++; p2--;
 	}
-	if (count == len)
-		return 1;
-	else
-		return 0;
+	return 1;
 }

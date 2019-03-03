@@ -1,22 +1,16 @@
 #include <stdio.h>
-#include <string.h>
+#include<string.h>
 #include "task3.h"
-
-#define N 256
+#define sLMax 201 // max length of string
 
 int main()
-
 {
-	char buf[N];
-	printf("Entered string:\n");
-	fgets(buf, N, stdin);
-
-	if (buf[strlen(buf) - 1] == '\n')
-		buf[strlen(buf) - 1] = '\0';
-
-	if (isPalindrome(buf) == 1)
-		printf("String %s  polindrom\n", buf);
-	else
-		printf("String %s ne polindrom\n", buf);
+	char str[sLMax];
+	printf("Enter the string (no more than %d characters): ", sLMax - 1);
+	fgets(str, sLMax, stdin);
+	if (str[strlen(str) - 1] == '\n')
+		str[strlen(str) - 1] = '\0';
+	printf("This string is%spalindrome", isPalindrome(str) ? " " : "n\'t ");
+	putchar('\n');
 	return 0;
 }

@@ -1,41 +1,34 @@
-#include <stdio.h>
 #include <string.h>
+#define COUNT_WORDS_MAX 10
 
 char * reverseWords(char * in, char *out)
-
 {
-
-	char *word[10];
-
-	int q, t = 0, i, j = 0, k = 0, inWord = 0, len = 0;
-	len = strlen(in);
-
-	for (i = 0; i < len; i++)
+	char *pArr[COUNT_WORDS_MAX] = { 0 };
+	int length = strlen(in);
+	int countWords = 0;
+	if (length == 0)
 	{
-		if (in[i] != ' '&& inWord == 0)
-		{
-			*(word + k) = &in[i];
-			k++;
-			inWord = 1;
-		}
-		else if (in[i] == ' '&& inWord == 1)
-			inWord = 0;
+		*out = *in;
+		return out;
 	}
 
-	for (q = k - 1; q >= 0; q--)
+	for (int i = 0; i < length; i++)
+		(*(in + i) != ' ' && *(in + i) != '\0' && (i == 0 || *(in + i - 1) == ' ')) ? *(pArr + countWords++) = in + i : 0;
+	if (countWords == 0)
 	{
-		len = strlen(*(word + q));
-
-		for (j, t = 0; j < len; j++, t++)
-		{
-			if (*(*(word + q) + t) != ' '&&*(*(word + q) + t) != '\0')
-				out[j] = *(*(word + q) + t);
-		}
-		out[j] = ' ';
-		j++;
+		for (int i = 0; i < length; i++)
+			*(out + i) = *(in + i);
+		*(out + length) = '\0';
+		return out;
 	}
 
-	out[j - 1] = '\0';
+	char * pOut = out;
+	for (int j = countWords - 1; j >= 0; j--)
+	{
+		for (int i = 0; *(*(pArr + j) + i) != ' ' && *(*(pArr + j) + i) != '\0'; i++)
+			*pOut++ = *(*(pArr + j) + i);
+		*pOut++ = ' ';
+	}
+	*--pOut = '\0';
 	return out;
-
 }
